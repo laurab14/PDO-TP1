@@ -1,7 +1,7 @@
 <?php
 //il faut tjrs appeler la base de donnée dans le controller
-require 'model/DataBase.php';
-require 'model/User.php';
+require '../model/DataBase.php';
+require '../model/User.php';
 
 if(count($_POST) > 0){
     $lastName = $_POST['lastName'];
@@ -21,6 +21,6 @@ if(count($_POST) > 0){
     $user->phone = $phone;
     $user->department = $department;
     if($user->addUser()){
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
 }

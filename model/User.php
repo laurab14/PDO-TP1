@@ -28,4 +28,21 @@ class User extends DataBase{
             return true;
         }
     }
+    public function displayUser(){
+        $query = "SELECT * FROM `user` INNER JOIN department ON department.id = user.department WHERE department = :id";
+        // création de la variable $addUser qui nous a permis de préparer la requête
+        $addUser = $this->db->prepare($query);
+        $addUser->bindValue(':id', $this->department, PDO::PARAM_INT);
+        $addUser->execute();
+        $addUserFetch = $addUser->fetchAll(PDO::FETCH_ASSOC);
+        return $addUserFetch;
+    }
+    public function allUser(){
+        $query = "SELECT * FROM `user` INNER JOIN department ON department.id = user.department";
+        // création de la variable $addUser qui nous a permis de préparer la requête
+        $addUser = $this->db->prepare($query);
+        $addUser->execute();
+        $addUserFetch = $addUser->fetchAll(PDO::FETCH_ASSOC);
+        return $addUserFetch;
+    }
 }

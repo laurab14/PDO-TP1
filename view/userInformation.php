@@ -1,5 +1,5 @@
 <?php
-require 'controller/userController.php'; 
+require '../controller/userController.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,7 +13,8 @@ require 'controller/userController.php';
 </head>
 
 <body>
-    <form method="POST" action="index.php">
+<?php require 'navbarView.php'; ?>
+    <form method="POST" action="">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="lastName">Nom</label>
