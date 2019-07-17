@@ -26,26 +26,36 @@ require 'controller/indexController.php';
     <?php
     if(empty($_POST['selectForm'])){
         ?>
-    <ul>
-        <?php foreach ($userResult as $value){
+    <?php foreach ($userResult as $value){
         ?>
+    <ul>
         <li><?= $value['lastName']?></li>
-        <?php
+        <li><?= $value['firstName']?></li>
+        <li><?= $value['birthDate']?></li>
+        <li><?= $value['adress']?></li>
+        <li><?= $value['phone']?></li>
+        <li><?= $value['department']?></li>
+    </ul>
+    <?php
     }
     ?>
-    </ul>
     <?php
        }else{
            ?>
-    <ul>
         <?php
            foreach ($selectResult as $value){
                ?>
-        <li><?= $value['firstName']?></li>
+        <ul>
+            <li><?= $value['lastName']?></li>
+            <li><?= $value['firstName']?></li>
+            <li><?= $value['birthDate']?></li>
+            <li><?= $value['adress']?></li>
+            <li><?= $value['phone']?></li>
+            <li><?= $value['department']?></li>
+        </ul>
         <?php
            }
            ?>
-    </ul>
     <?php
     }
     ?>

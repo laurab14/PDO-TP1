@@ -3,6 +3,6 @@
 class DataBase{
     protected $db;
     public function __construct(){
-        $this->db = new PDO ('mysql:host=localhost;dbname=PDO1', 'pdo','pdo');
+        $this->db = new PDO ('mysql:host=localhost;dbname=PDO1;charset=utf8', 'pdo','pdo');
     }
 }
